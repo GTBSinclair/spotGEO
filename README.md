@@ -26,7 +26,7 @@ The above process is then iterated over all images in the dataset.
 
 ## Results
 
-The figure below shows the value of avg. Area 1 - avg. Area 2 for every image in the dataset. Through a process of optimization, the optimal threshold to identify true sats from false sats was found at y = 0.012, indicated by the red line. This threshold allowed the algorithm to correctly identify 46% of true sats and 99% of false sats.
+The figure below shows the difference between avg. Area 1 and avg. Area 2 for every image in the dataset. Through a process of optimization, the optimal threshold to identify true sats and false sats was found at y = 0.012, indicated by the red line. This threshold allowed the algorithm to correctly identify 46% of true sats and 99% of false sats.
 
 <p align="center">
   <img src="https://github.com/P9981/spotGEO/blob/main/images/threshold.png" width="550" title="hover text">
