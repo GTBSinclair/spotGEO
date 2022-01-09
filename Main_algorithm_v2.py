@@ -69,7 +69,7 @@ class Brightness_analysis:
                         img = features[i].reshape((7,7))
                         averages = Brightness_analysis.append_averages(img)
                         list_of_GEOsat_averages.append([averages,labels[i],i])
-                        # plt.imshow(img, cmap = 'gray', vmin=0, vmax=1)
+                        plt.imshow(img, cmap = 'gray', vmin=0, vmax=1)
                         
                 if ID2 == 3:
                     img = features[i].reshape((7,7))
@@ -132,9 +132,10 @@ class Brightness_analysis:
 
 
     def classify(features,labels,ID,ID2,threshold):
-
+        
         master_delta_areas = Brightness_analysis.calculate_delta_areas(features,labels,ID,ID2)
         
+        delta_area_list = []
         assigned_labels = []
 
         for i in range(len(master_delta_areas[0])):
@@ -142,6 +143,7 @@ class Brightness_analysis:
                 assigned_labels.append(0)
             elif master_delta_areas[0][i] > threshold and master_delta_areas[0][i] < 0.5:
                 assigned_labels.append(1)
+            delta_area_list.extend([master_delta_areas[0][i]])
                 
-        return [assigned_labels]
+        return [assigned_labels,delta_area_list]
 
