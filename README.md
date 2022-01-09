@@ -6,7 +6,7 @@ spotGEO was a 2020 ESA competition to develop an algorithm that could detect geo
 
 ## Dataset
 
-The spotGEO training dataset (available at https://kelvins.esa.int/spot-the-geo-satellites/dataset/) is very large and can be used to train AI neural networks. In this algorithm, however, it is only used as a testing dataset. A subset of this dataset containing 5000 images of false sats and 15 images of true sats is used.
+The spotGEO training dataset (available at https://kelvins.esa.int/spot-the-geo-satellites/dataset/) is very large and can be used to train AI neural networks; in this algorithm, however, it is only used as a testing dataset. A subset of this dataset containing 5015 images (5000 images of false sats and 15 images of true sats) is used.
 
 <p align="center">
   <img src="https://github.com/P9981/spotGEO/blob/main/images/True_sat.png" width="250" title="hover text">
