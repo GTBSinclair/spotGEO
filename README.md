@@ -15,7 +15,8 @@ The spotGEO training dataset (available at https://kelvins.esa.int/spot-the-geo-
 
 ## Main algorithm
 
-The algorithm starts by identifying two regions of pixels in each image, i.e. Area 1 and Area 2. Area 1 contains the inner 9 pixels and Area 2 contains the outer 40 pixels. A key fact is that Area 1 and Area 2 will significantly differ in brightness when a true satellite is present in the image. The algorithm then calculates the average of pixel brightness for both areas, i.e. avg. Area 1 and avg. Area 2. The difference between the two is calculated, so avg. Area 1 - avg. Area 2. If the difference is below the threshold, this means that there isn't enough brightness discrepancy between the areas and it is labelled '0' for false satellite. Alternatively, if the difference in areas is above the threshold then its likely a true satellite and its labelled '1'. 
+The algorithm starts by identifying two regions of pixels in each image, i.e. Area 1 and Area 2. Area 1 contains the inner 9 pixels and Area 2 contains the outer 40 pixels. A key fact is that Area 1 and Area 2 will significantly differ in brightness when a true satellite is present in the image. 
+The algorithm calculates the average of pixel brightness for both areas, i.e. avg. Area 1 and avg. Area 2. The difference between the two is then calculated, so avg. Area 1 - avg. Area 2. If the area difference is below the threshold it means that there isn't enough brightness discrepancy between the areas and the image is labelled '0' for false satellite. Alternatively, if the difference in areas is above the threshold then its likely a true satellite and its labelled '1'. 
 The above process is then iterated over all images in the dataset.
 
 <p align="center">
@@ -24,13 +25,13 @@ The above process is then iterated over all images in the dataset.
 
 ## Results
 
-The figure below shows the value of avg. Area 1 - avg. Area 2 for every image in the dataset. The optimal threshold to identify true sats from false sats was found to be y = 0.012, indicated by the red line. This threshold allowed the algorithm to correctly identify 46% of true sats and 99% of false sats.
+The figure below shows the value of avg. Area 1 - avg. Area 2 for every image in the dataset. Through a process of optimization, the optimal threshold to identify true sats from false sats was found at y = 0.012, indicated by the red line. This threshold allowed the algorithm to correctly identify 46% of true sats and 99% of false sats.
 
 <p align="center">
   <img src="https://github.com/P9981/spotGEO/blob/main/images/threshold.png" width="550" title="hover text">
 </p>
 
-The threshold performance is analysed in the figure below using the Kappa score as an indicator of success (higher kappa score means better performance)
+The threshold performance is analysed in the figure below using the Kappa score as an indicator of success (a higher kappa score means better performance)
 
 <p align="center">
   <img src="https://github.com/P9981/spotGEO/blob/main/images/threshold_performance3.png" width="550" title="hover text">
@@ -38,4 +39,4 @@ The threshold performance is analysed in the figure below using the Kappa score 
 
 ## Improvements
 
-A major improvement is to modify the algorithm to work on the much larger ground-based telescope images (available at https://kelvins.esa.int/spot-the-geo-satellites/problem/) and lower the algorithm threshold so that it catches all the true sats. By locating the satellites in each image and quantifying their movement in the same 'sequence' it will be possible to filter all the false positives and be left with only the true satellites.
+A major improvement is to lower the algorithm threshold so that it catches all the true sats and modify the algorithm to work on the much larger ground-based telescope images (available at https://kelvins.esa.int/spot-the-geo-satellites/problem/). By locating the possible satellites in each image and quantifying their movement in the same 'sequence' it will be possible to filter all the false positives and be left with only the true satellites. The true satellites will be visible in all the images in the sequence whereas the false positives won't be.
