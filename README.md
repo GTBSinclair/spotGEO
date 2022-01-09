@@ -8,10 +8,7 @@ spotGEO was a 2020 ESA competition to develop an algorithm that could detect geo
 <p align="center">
   <img src="https://github.com/P9981/spotGEO/blob/main/images/True_sat.png" width="250" title="hover text">
   <img src="https://github.com/P9981/spotGEO/blob/main/images/False_sat.png" width="250" alt="accessibility text">
-</p>
-
-<p align="center">
-  <img src="https://github.com/P9981/spotGEO/blob/main/images/Area1_Area2.png" width="250" title="hover text">
+  <img src="https://github.com/P9981/spotGEO/blob/main/images/Area1_Area2.png" width="250" alt="accessibility text">
 </p>
 
 <p align="center">
