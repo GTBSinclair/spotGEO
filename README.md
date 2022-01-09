@@ -12,7 +12,7 @@ spotGEO was a 2020 ESA competition to develop an algorithm that could detect geo
 </p>
 
 <p align="center">
-  <img src="https://github.com/P9981/spotGEO/blob/main/images/spotGEO_main_algorithm_v2.png" width="250" title="hover text">
+  <img src="https://github.com/P9981/spotGEO/blob/main/images/spotGEO_main_algorithm_v2.png" width="350" title="hover text">
 </p>
 
 <p align="center">
